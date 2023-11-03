@@ -17,7 +17,7 @@ def attend_le_joueur_debut():
     except SyntaxError:
          pass
 
-
+    '''
 def enter_choice():
     a=("Please select your option \n 1.Start your journey \n 2.Credit \n 3.Exit \n ")
     x=(input(a))
@@ -31,16 +31,27 @@ def enter_choice():
         else:
             x=str(x)
             x=(input(a))
+
     
     return x
+    '''
 
-
+def checks_type_int():
+    a=("Please select your option \n 1.Start your journey \n 2.Credit \n 3.Exit \n ")
+    while True:
+        x=input(a)
+        x=str(x)
+        if x.isnumeric() ==True:
+            x=int(x)
+            if x>0 and x<4:
+                return x
+        
 
 
 
 def main():
     attend_le_joueur_debut
-    enter_choice()
+    checks_type_int()
     welcome()
     welcome()
 
