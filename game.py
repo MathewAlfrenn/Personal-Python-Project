@@ -1,13 +1,14 @@
 import random
+import time
+#############################################################
 
-
-def welcome():
+def begin():
     '''
     ()->None
     print a welcome message
     '''
-    print("Welcome to the adventure rpg game : Your Journey !")
-
+    print("You will now begin the adventure rpg game : Your Journey !")
+######
 def attend_le_joueur_debut():
     '''()->None
     Pause le programme jusqu'au l'usager appui Enter
@@ -17,26 +18,9 @@ def attend_le_joueur_debut():
     except SyntaxError:
          pass
 
-    '''
-def enter_choice():
-    a=("Please select your option \n 1.Start your journey \n 2.Credit \n 3.Exit \n ")
-    x=(input(a))
-    
-    while x.isnumeric() ==False:
-        x=(input(a))
-    while x.isnumeric() == True:
-        x=int(x)
-        if x>1 and x<4:
-            return x
-        else:
-            x=str(x)
-            x=(input(a))
+######
 
-    
-    return x
-    '''
-
-def checks_type_int():
+def checks_the_choice():
     a=("Please select your option \n 1.Start your journey \n 2.Credit \n 3.Exit \n ")
     while True:
         x=input(a)
@@ -45,16 +29,62 @@ def checks_type_int():
             x=int(x)
             if x>0 and x<4:
                 return x
+######        
+def credit(a):
+    while a == 2:
+        print("Mathew Al-Frenn \n")
+        a=checks_the_choice()
+######
+def Exit(a):
+    if a == 3:
+        exit()
+
+######    
+def character_creation():
+    global name
+    name = input("Enter the name of your character")
+#####
+def character_age():
+    global age
+    age= input("Enter the age of your character")
+    while age.isnumeric == False:
+        age= input("Enter the age of your character")
+    age=int(age)
+        
+def young():
+    print("it seems that you are too young, you should wait some time and then when you are old enough come back to me")
+    time. sleep(5)
+    exit()
+    
+def old():
+    print("Your quite old, perhaps too old to be doing dangerus adventures like this one will be")
+    time. sleep(5)
+    exit()
+
+#######
+
+def welcome():
+    print("Hello", name, ",are you ready to start your epic adventure?")
+
+######!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+def main():
+    attend_le_joueur_debut()
+    a=checks_the_choice()
+    Exit(a)
+    credit(a)
+    
+    begin()
+    character_creation()
+    character_age()
+    welcome()
+    if age<18:
+        young()
+    if age>65:
+        old()
+        
         
 
 
-
-def main():
-    attend_le_joueur_debut
-    checks_type_int()
-    welcome()
-    welcome()
-
-
-    
+##################   
 main()
+##################
