@@ -1,5 +1,6 @@
 import random
 import time
+import turtle
 #############################################################
 
 def begin():
@@ -52,19 +53,44 @@ def character_age():
     age=int(age)
         
 def young():
-    print("it seems that you are too young, you should wait some time and then when you are old enough come back to me")
+    print("It appears that you are quite young. I suggest waiting for some time, and when you are older, feel free to return and engage with me.")
     time. sleep(5)
     exit()
     
 def old():
-    print("Your quite old, perhaps too old to be doing dangerus adventures like this one will be")
+    print("You're quite old, perhaps too old to be undertaking dangerous adventures like this one will be.")
     time. sleep(5)
     exit()
 
 #######
 
 def welcome():
-    print("Hello", name, ",are you ready to start your epic adventure?")
+    print("Hello,", name,", I am the Wise Gordolf, and I will be your guide for this long journey ahead.")
+    print("Here is the map of the town")
+
+
+
+###
+def Map():
+    s=turtle.Screen()
+    t=turtle.Turtle()
+
+    t.speed(0)
+    t.penup()
+    t.goto(-240,260)
+    t.pendown()
+    t.goto(-240,-200)
+    t.goto(225,-200)
+    t.goto(225,260)
+    t.goto(20,260)
+    t.penup()
+    t.goto(-60,260)
+    t.pendown()
+    t.goto(-240,260)
+
+
+
+    s.exitonclick()
 
 ######!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 def main():
@@ -81,10 +107,13 @@ def main():
         young()
     if age>65:
         old()
+    Map()
+    
         
         
 
 
-##################   
-main()
+##################
+Map()
+
 ##################
