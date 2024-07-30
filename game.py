@@ -47,11 +47,16 @@ def character_creation():
 #####
 def character_age():
     global age
-    age= input("Enter the age of your character")
+    try:
+        age= int(input("Enter the age of your character"))
+    except ValueError:
+        character_age()
+
+    '''
     while age.isnumeric == False:
         age= input("Enter the age of your character")
     age=int(age)
-        
+    '''
 def young():
     print("It appears that you are quite young. I suggest waiting for some time, and when you are older, feel free to return and engage with me.")
     time. sleep(5)
@@ -115,5 +120,6 @@ def main():
 
 ##################
 Map()
+main()
 
 ##################

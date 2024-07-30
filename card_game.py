@@ -55,8 +55,7 @@ def donne_cartes(p):
 
     
              
-     # COMPLETEZ CETTE FONCTION EN CONFORMITE AVEC LA DESCRIPTION CI-DESSUS
-     # AJOUTEZ VOTRE CODE ICI
+
      index=0
 
      while index < len(p):
@@ -89,8 +88,6 @@ def elimine_paires(l):
     resultat=[]
 
 
-    # COMPLETEZ CETTE FONCTION EN CONFORMITE AVEC LA DESCRIPTION CI-DESSUS
-    # AJOUTEZ VOTRE CODE ICI
     index=0
     sousindex=1
     while index <len(l)-1:
@@ -105,9 +102,7 @@ def elimine_paires(l):
             index= index+1
         sousindex = index+1
     resultat=l
-#l=(['10♣', '2♣', '5♢', '6♣', '9♣', 'A♢', '10♢'])
-# probleme : quand j enelve le 10, le 2 devient position 0 mais la je regarde avec la position 1, car index augmente de 1, donc faire que si le if a lieu de NE PAS augmenter l index
-# aussi je dois utuliser resultat
+
     random.shuffle(resultat)
     return resultat
 
@@ -119,8 +114,7 @@ def affiche_cartes(p):
     '''
 
 
-    # COMPLETEZ CETTE FONCTION EN CONFORMITE AVEC LA DESCRIPTION CI-DESSUS
-    # AJOUTEZ VOTRE CODE ICI
+
 
     index=0
     while index <len(p)-1:
@@ -131,30 +125,23 @@ def affiche_cartes(p):
     
 
 def entrez_position_valide(n):
+    '''
+    (int) -> int
+    Retourne un entier du clavier, de 1 à n (1 et n inclus).
+    Continue à demander si l'usager entre un entier qui n'est pas dans l'intervalle [1, n]
     
-     '''
-     (int)->int
-     Retourne un entier du clavier, de 1 à n (1 et n inclus).
-     Continue à demander si l'usager entre un entier qui n'est pas dans l'intervalle [1,n]
-     
-     Précondition: n>=1
-     '''
-
-     # COMPLETEZ CETTE FONCTION EN CONFORMITE AVEC LA DESCRIPTION CI-DESSUS
-     # AJOUTEZ VOTRE CODE ICI
-     n=str(n)
-     a=("J'ai"+" "+ n +" " +"cartes. Si 1 est la position de ma première carte et"+" " +n +" " +"la position de ma dernière carte, laquelle de mes cartes voulez-vous? SVP entrer un entier de 1 à "+" " + n +" " +":")
-     n=int(n)
-     x=(input(a))
-     x=int(x)
-     type(x)
-     while x<1 or x>n:
-         n= str(n)
-         x=input(("Vérifier que votre valeur est bien comprise entre 1 et"+ " " +n +":"))
-         x=int(x)
-         n=int(n)
-         
-     return x
+    Précondition: n >= 1
+    '''
+    while True:
+        try:
+            x = input(f"J'ai {n} cartes. Si 1 est la position de ma première carte et {n} la position de ma dernière carte, laquelle de mes cartes voulez-vous? SVP entrer un entier de 1 à {n}: ")
+            x = int(x)
+            if 1 <= x <= n:
+                return x
+            else:
+                print(f"Vérifier que votre valeur est bien comprise entre 1 et {n}: ")
+        except ValueError:
+            print("Veuillez entrer un entier valide.")
 
 
 
@@ -179,8 +166,7 @@ def joue():
      
      donneur=elimine_paires(donneur)
      humain=elimine_paires(humain)
-     # COMPLETEZ CETTE FONCTION EN CONFORMITE AVEC LA DESCRIPTION CI-DESSUS
-     # AJOUTEZ VOTRE CODE ICI
+
      print("*********************************************************")
      while len(humain) !=0 or len(donneur) !=0:
          if len(humain)==0:
