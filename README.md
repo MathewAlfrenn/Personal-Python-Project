@@ -3,7 +3,7 @@
 Mathew Al-Frenn
 malfr102@uottawa.ca
 
-French:
+Français:
 
 Ce répertoire contient quelques-unes de mes créations écrites en Python. Les voici :
 
